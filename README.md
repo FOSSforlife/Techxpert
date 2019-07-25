@@ -1,2 +1,9 @@
 # Techxpert
-An easy-to-use interface for selecting tech products
+
+To use this app:
+```
+git clone https://github.com/FOSSforlife/Techxpert
+cd Techxpert
+npm i
+npm start
+```
