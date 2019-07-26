@@ -17,6 +17,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // this is where the URLs are created
 app.use('/', indexRouter); // accessed by the browser
-app.use('/products', productsRouter); // accessed with fetch('/products')
+app.use('/products', productsRouter); // accessed with fetch('/products/...')
 
 module.exports = app;
