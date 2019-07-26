@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="text-center">
+    <div class="container">
+        <div class="card card-question mb-4 mt-5">
+            <h2 class="card-title" id="question">Use the text boxes at the bottom to change the text</h2>
+        </div>
+        <div class="row mb-5">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="row mb-1">
+                    <div class="card card-answer col py-4 mr-1">
+                        <h3 class="card-title" id="answer-a">Yes</h3>
+                        <img class="card-img-bottom" src="img/generic-desktop.jpg" alt="Laptop">
+                    </div>
+                    <div class="card card-answer col py-4">
+                        <h3 class="card-title" id="answer-b">Laptop</h3>
+                        <img class="card-img-bottom" src="img/generic-laptop.png" alt="Laptop">
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="card card-answer col-6 py-4 mr-1">
+                        <h3 class="card-title" id="answer-c">WOO</h3>
+                        <img class="card-img-bottom" src="img/generic-phone.jpg" alt="Laptop">
+                    </div>
+                    <div class="card card-answer col py-4 display-none">
+                        <h3 class="card-title" id="answer-d">YEEHAW</h3>
+                        <img class="card-img-bottom" src="img/generic-laptop.png" alt="Laptop">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+
+        <footer class="resources">
+
+            <ul>
+                <li><a href="#">Buying Guide</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+            
+        </footer>
+
+        <div>
+            <button class="btn btn-primary mt-2" onclick="updateText()">Update</button>
+            <form>
+                <input type="text" placeholder="Question" id="input-question" name="input-question"><br>
+                <input type="text" placeholder="Answer A" id="input-answer-a" name="input-answer-a"><br>
+                <input type="text" placeholder="Answer B" id="input-answer-b" name="input-answer-b"><br>
+                <input type="text" placeholder="Answer C" id="input-answer-c" name="input-answer-c"><br>
+                <input type="text" placeholder="Answer D" id="input-answer-d" name="input-answer-d"><br>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
