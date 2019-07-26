@@ -9,7 +9,7 @@ function getLaptops(query) {
     let convertible = fs.readFileSync('data/laptops/convertible.json');
     convertible = JSON.parse(convertible);
 
-    return {
+    return { // You can also return arrays
         budget: convertible[0].Budget
     };
 }
