@@ -10,7 +10,7 @@ function getLaptops(query) {
     convertible = JSON.parse(convertible);
 
     return {
-        sample: convertible[0].Budget
+        budget: convertible[0].Budget
     };
 }
 
