@@ -26,19 +26,23 @@ function getPhones(query) {
     };
 }
 
+// localhost:3000/products/laptops
 router.get('/laptops', function(req, res, next) {
     const laptops = getLaptops(req); // req contains all of the form data  
     res.json(laptops);
 });
 
+// localhost:3000/products/desktops
 router.get('/desktops', function(req, res, next) {
-    const desktops = getDesktops(req); // req contains all of the form data  
+    const desktops = getDesktops(req); 
     res.json(desktops);
 });
 
+// localhost:3000/products/phones
 router.get('/phones', function(req, res, next) {
-    const phones = getPhones(req); // req contains all of the form data  
+    const phones = getPhones(req);
     res.json(phones);
+    // res.send('Hello world');
 });
 
 module.exports = router;
