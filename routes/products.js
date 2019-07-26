@@ -1,11 +1,16 @@
 const express = require('express');
 const router = express.Router();
+const fs = require('fs');
 
 // the bulk of the code will go in these three functions
 // but feel free to make helper functions when necessary
 function getLaptops(query) {
+    // example of importing JSON
+    let convertible = fs.readFileSync('data/laptops/convertible.json');
+    convertible = JSON.parse(convertible);
+
     return {
-        sample: 'data'
+        sample: convertible[0].Budget
     };
 }
 
