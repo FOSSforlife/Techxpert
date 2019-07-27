@@ -1,10 +1,65 @@
-@import "./bootstrap/bootstrap.css";
+@import '../../css/bootstrap/bootstrap.css';
 
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.card-question {
+  background-color: #009bff;
 }
 
-a {
-  color: #00B7FF;
+.card-question .card-title {
+  vertical-align: center; /* Doesn't work */
+  padding-top:10px;
+}
+
+.card-answer {
+  background-color: #00dbff;
+}
+
+.card-answer-noimg {
+  background-color: #00dbff;
+  margin-bottom: 5px;
+  width:80%;
+}
+
+.card-answer .card-title {
+  font-weight: bold;
+}
+
+form input {
+  width:100%;
+}
+
+.card-img-bottom {
+  width:70%;
+  height:auto;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.checkbox {
+  margin-right:10px;
+}
+
+.resources {
+  /* display:none; */
+}
+
+.resources ul {
+  text-align:center;
+}
+
+.resources li {
+  display:inline;
+  /* padding-right:1em; */
+  text-align:center;
+}
+
+.resources li::after {
+  content: ' |';
+}
+
+.resources li:nth-last-child(1)::after {
+  content: '';
+}
+
+#navbarTogglerDemo01 li {
+  text-align: left;
 }
