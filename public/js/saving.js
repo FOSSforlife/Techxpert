@@ -11,7 +11,7 @@ function addLaptop(){
 }
 
 function addDekstop(){
-  choice("devince")= "Desktop";
+  choice("device")= "Desktop";
   console.log(choice);
 }
 
@@ -21,6 +21,6 @@ function addPhone(){
 }
 
 function addTablet(){
-  choice("device")="Tablet"
+  choice("device")="Tablet";
   console.log(choice);
 }
