@@ -2,28 +2,32 @@ let currentQuestion = 0;
 
 // this is the javascript from the example file. use it to h
 function updateText() {
-  const answerChoices =
-      ['answer-a', 'answer-b', 'answer-c', 'answer-d', 'answer-e'];
-  const NUM_QUESTIONS = 3;
+  const answerChoices = ['answer-a', 'answer-b', 'answer-c', 'answer-d', 'answer-e'];
 
-  let questions = [
-    'What operating system do you prefer?',
-    'What do you plan on using this laptop for?',
-    'Does the laptop need to be portable?'
+  const questions = [
+    {
+      title: 'What operating system do you prefer?',
+      answers: ['Mac', 'Windows', 'Either'],
+      template: 'template1'
+    },
+    {
+      title: 'What do you plan on using this laptop for?',
+      answers: ['School', 'Work', 'Gaming', 'Personal'],
+      template: 'template1'
+    },
+    {
+      title: 'Does the laptop need to be portable?',
+      answers: ['Very portable', 'Fairly Portable', 'Not Important'],
+      template: 'template1'
+    },
   ];
 
-  let answers = [
-    ['Mac', 'Windows', 'Either'], ['School', 'Work', 'Gaming', 'Personal'],
-    ['Very portable', 'Fairly Portable', 'Not Important']
-  ];
-
-  if (currentQuestion >= NUM_QUESTIONS) {
+  if (currentQuestion >= questions.length) {
     document.getElementById('question').innerHTML = 'DONE';
   } else {
-    document.getElementById('question').innerHTML = questions[currentQuestion];
-    let currentAnswers = answers[currentQuestion];
-    var i;
-    for (i = 0; i < answerChoices.length; i++) {
+    document.getElementById('question').innerHTML = questions[currentQuestion].title;
+    let currentAnswers = questions[currentQuestion].answers;
+    for (let i = 0; i < answerChoices.length; i++) {
       if (i < currentAnswers.length) {
         document.getElementById(answerChoices[i]).innerHTML = currentAnswers[i];
       } else {
