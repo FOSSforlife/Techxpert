@@ -1,59 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body class="text-center">
-    <div class="container">
-      <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarTogglerDemo01"
-            aria-controls="navbarTogglerDemo01"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <h1>Techxpert</h1>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-              <li class="nav-item active">
-                <a class="nav-link" href="#"
-                  >Home <span class="sr-only">(current)</span></a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">How To</a>
-              </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-              <input
-                class="form-control mr-sm-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button
-                class="btn btn-outline-success my-2 my-sm-0"
-                type="submit"
-              >
-                Search
-              </button>
-            </form>
-          </div>
-        </nav>
-      </header>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="text-center">
+  <div class="container">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <h1>Techxpert</h1>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a id="home-button" class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">How To</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </nav>
+    </header>
+
+    <section id="home-page">
       <div class="card card-question mb-4 mt-5">
         <h2 class="card-title" id="question">What u lookin' to buy?</h2>
       </div>
@@ -62,40 +49,20 @@
         <div class="col-md-8">
           <div class="row mb-1">
             <div class="card card-answer col py-4 mr-1">
-              <a href="./budget.html">
-                <h3 class="card-title" id="answer-a">Laptop</h3>
-                <img
-                  class="card-img-bottom"
-                  src="img/generic-desktop.jpg"
-                  alt="Laptop"
-                />
+              <a id="laptop-device" onclick="laptopQuestions()">
+                <h3 class="card-title">Laptop</h3>
+                <img class="card-img-bottom" src="img/generic-desktop.jpg" alt="Laptop" />
               </a>
             </div>
             <div class="card card-answer col py-4">
-              <h3 class="card-title" id="answer-b">Desktop</h3>
-              <img
-                class="card-img-bottom"
-                src="img/generic-laptop.png"
-                alt="Desktop"
-              />
+              <h3 class="card-title" id="desktop-device">Desktop</h3>
+              <img class="card-img-bottom" src="img/generic-laptop.png" alt="Desktop" />
             </div>
           </div>
           <div class="row mb-1">
             <div class="card card-answer col-6 py-4 mr-1">
-              <h3 class="card-title" id="answer-c">Phone</h3>
-              <img
-                class="card-img-bottom"
-                src="img/generic-phone.jpg"
-                alt="Phone"
-              />
-            </div>
-            <div class="card card-answer col py-4 display-none">
-              <h3 class="card-title" id="answer-d">Tablet</h3>
-              <img
-                class="card-img-bottom"
-                src="img/generic-tablet.jpg"
-                alt="Tablet"
-              />
+              <h3 class="card-title" id="phone-device">Phone</h3>
+              <img class="card-img-bottom" src="img/generic-phone.jpg" alt="Phone" />
             </div>
           </div>
         </div>
@@ -108,24 +75,75 @@
           <li><a href="#">Help</a></li>
         </ul>
       </footer>
-    </div>
+    </section>
+  </div>
 
-    <script src="js/app.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-    <script src = "/js/saving.js"></script>
-  </body>
+  <section id="question-page">
+    <div class="container">
+      <div class="card card-question mb-4 mt-5">
+        <h2 class="card-title" id="question-title">
+          Use the text boxes at the bottom to change the text
+        </h2>
+      </div>
+      <div class="row mb-5">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <input type="checkbox" class="checkbox" id="check-a" /><button
+            class="btn btn-lg btn-primary card-answer-noimg" id="answer-a">
+            Yes</button><br />
+          <input type="checkbox" class="checkbox" id="check-b" /><button
+            class="btn btn-lg btn-primary card-answer-noimg" id="answer-b">
+            Yes</button><br />
+          <input type="checkbox" class="checkbox" id="check-c" /><button
+            class="btn btn-lg btn-primary card-answer-noimg" id="answer-c">
+            Yes</button><br />
+          <input type="checkbox" class="checkbox" id="check-d" /><button
+            class="btn btn-lg btn-primary card-answer-noimg" id="answer-d">
+            Yes</button><br />
+          <input type="checkbox" class="checkbox" id="check-e" /><button
+            class="btn btn-lg btn-primary card-answer-noimg" id="answer-e">
+            Yes</button><br />
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="budget-slider">
+    <div class="container">
+      <div class="card card-question mb-4 mt-5">
+        <h2 class="card-title" id="budget-title">
+          What is your budget? (Drag the sliders)
+        </h2>
+      </div>
+      <div class="row mb-5">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          Min: <input id="slider-min" type="range" /> 600 <br />
+          Max: <input id="slider-max" type="range" /> 1200
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+      <p>
+        For some reason the sliders display way differently in Chrome vs
+        Firefox so we would have to add styling
+      </p>
+      <button class="btn btn-primary mt-2" id="budget-button">
+        Next
+      </button>
+    </div>
+  </section>
+
+  <script src=" js/app.js"> </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+</body>
+
 </html>
