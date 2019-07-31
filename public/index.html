@@ -49,13 +49,13 @@
         <div class="col-md-8">
           <div class="row mb-1">
             <div class="card card-answer col py-4 mr-1">
-              <a id="laptop-device">
+              <a id="laptop-device" onclick="initQuestions('laptop')">
                 <h3 class="card-title">Laptop</h3>
                 <img class="card-img-bottom" src="img/generic-laptop.png" alt="Laptop" />
               </a>
             </div>
             <div class="card card-answer col py-4">
-              <a id="desktop-device">
+              <a id="desktop-device" onclick="initQuestions('desktop')">
                 <h3 class="card-title">Desktop</h3>
                 <img class="card-img-bottom" src="img/generic-desktop.jpg" alt="Desktop" />
               </a>
@@ -63,7 +63,7 @@
           </div>
           <div class="row mb-1">
             <div class="card card-answer col-6 py-4 mr-1">
-              <a id="phone-device">
+              <a id="phone-device" onclick="initQuestions('phone')">
                 <h3 class="card-title">Phone</h3>
                 <img class="card-img-bottom" src="img/generic-phone.jpg" alt="Phone" />
               </a>
@@ -93,19 +93,19 @@
         <div class="col-md-2"></div>
         <div class="col-md-8" id="answer-section">
           <input type="checkbox" class="checkbox" id="check-a" /><button
-            class="btn btn-lg btn-primary card-answer-noimg" id="answer-a">
+            class="btn btn-lg btn-primary card-answer-noimg" id="answer-a" onclick="nextQuestion(0)">
             Yes</button><br />
           <input type="checkbox" class="checkbox" id="check-b" /><button
-            class="btn btn-lg btn-primary card-answer-noimg" id="answer-b">
+            class="btn btn-lg btn-primary card-answer-noimg" id="answer-b" onclick="nextQuestion(1)">
             Yes</button><br />
           <input type="checkbox" class="checkbox" id="check-c" /><button
-            class="btn btn-lg btn-primary card-answer-noimg" id="answer-c">
+            class="btn btn-lg btn-primary card-answer-noimg" id="answer-c" onclick="nextQuestion(2)">
             Yes</button><br />
           <input type="checkbox" class="checkbox" id="check-d" /><button
-            class="btn btn-lg btn-primary card-answer-noimg" id="answer-d">
+            class="btn btn-lg btn-primary card-answer-noimg" id="answer-d" onclick="nextQuestion(3)">
             Yes</button><br />
           <input type="checkbox" class="checkbox" id="check-e" /><button
-            class="btn btn-lg btn-primary card-answer-noimg" id="answer-e">
+            class="btn btn-lg btn-primary card-answer-noimg" id="answer-e" onclick="nextQuestion(4)">
             Yes</button><br />
         </div>
         <div class="col-md-2"></div>
