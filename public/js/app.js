@@ -52,6 +52,7 @@ const desktopQuestions = [
       '$400-$999', '$1000-$1399', '$1400-$1699', '$1700-$1999', '$2000 and Up'
     ],
     id: 'budget',
+    // if 'jsonAnswers' is omitted, it will use 'answers' by default
   },
   {
     title: 'Which operating system do you prefer? If unsure, choose Microsoft Windows',
