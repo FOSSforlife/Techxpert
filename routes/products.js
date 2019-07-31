@@ -9,21 +9,19 @@ function getLaptops(query) {
   let convertible = fs.readFileSync('data/laptops/convertible.json');
   convertible = JSON.parse(convertible);
 
-  return { // You can also return arrays
-    budget: convertible[0].Budget
-  };
+  return [convertible[5], convertible[7], convertible[11]];
 }
 
-function getDesktops(query) {
-  return {
-    sample: 'data'
-  };
+function getTablets(query) {
+  let tablets = fs.readFileSync('data/tablets.json')
+  tablets = JSON.parse(tablets);
+  return [tablets[0], tablets[1], tablets[2]];
 }
 
 function getPhones(query) {
-  return {
-    sample: 'data'
-  };
+  let phones = fs.readFileSync('data/phones.json')
+  phones = JSON.parse(phones);
+  return [phones[0], phones[1], phones[2]];
 }
 
 // localhost:3000/products/laptops
@@ -32,10 +30,10 @@ router.get('/laptops', function (req, res, next) {
   res.json(laptops);
 });
 
-// localhost:3000/products/desktops
-router.get('/desktops', function (req, res, next) {
-  const desktops = getDesktops(req);
-  res.json(desktops);
+// localhost:3000/products/tablets
+router.get('/tablets', function (req, res, next) {
+  const tablets = getTablets(req);
+  res.json(tablets);
 });
 
 // localhost:3000/products/phones
