@@ -1,4 +1,5 @@
 [{
+    "Name": "Samsung Galaxy S10 Plus",  
     "Weight": "175g",
     "Dimensions": "74.1 x 157.6 x 7.8mm",
     "OS": "Android 9.0 (Pie)",
@@ -12,6 +13,7 @@
     "Front camera": "10MP + 8MP Depth Sensor"
   },
   {
+    "Name": "Huawei P30 Pro",
     "Weight": "192g",
     "Dimensions": "158 x 73.4 x8.4mm",
     "OS": "Android 9.0 Pie",
@@ -25,6 +27,7 @@
     "Front camera": "32MP f/2.0"
   },
   {
+    "Name": "Huawei Mate 20 Pro",
     "Weight": "189g",
     "Dimensions": "157.8 x 72.3 x 8.6mm",
     "OS": "Android 9.0 Pie, EMUI9.0",
@@ -38,6 +41,7 @@
     "Front camera": "24MP"
   },
   {
+    "Name": "Samsung Galaxy Note 9",
     "Weight": "201g",
     "Dimensions": "161.9 x 76.4 x8.8mm",
     "OS": "Android 8.1",
@@ -51,6 +55,7 @@
     "Front camera": "8MP f/1.7"
   },
   {
+    "Name": "Google Pixel 3 XL",
     "Weight": "184g",
     "Dimensions": "158 x 76.7 x7.9mm",
     "OS": "Android 9.0",
@@ -64,6 +69,7 @@
     "Front camera": "8MP f/1.8"
   },
   {
+    "Name": "OnePlus 6T",
     "Weight": "185g",
     "Dimensions": "157.5 x 74.8 x8.2mm",
     "OS": "Android 9.0",
@@ -77,6 +83,7 @@
     "Front camera": "16MP f/2.0"
   },
   {
+    "Name": "Xiaomi Mi 9",
     "Weight": "173g",
     "Dimensions": "157.5 x 74.7 x 7.6mm",
     "OS": "Android 9.0",
@@ -90,6 +97,7 @@
     "Front camera": "20 MP f/2.0"
   },
   {
+    "Name": "Nokia 9 PureView",
     "Weight": "172g",
     "Dimensions": "155 x 75 x8mm",
     "OS": "Android 9.0 Pie",
@@ -103,6 +111,7 @@
     "Front camera": "20MP"
   },
   {
+    "Name": "Sony Xperia 10 Plus",
     "Weight": "180g",
     "Dimensions": "167 x 73 x8.3mm",
     "OS": "Android 9.0 Pie",
@@ -116,6 +125,7 @@
     "Front camera": "8MP f/2.0"
   },
   {
+    "Name": "HTC U12+",
     "Weight": "188g",
     "Dimensions": "156.6 x 73.9 x8.7mm",
     "OS": "Android 8.0",
@@ -129,6 +139,7 @@
     "Front camera": "8MP f/2.0 + 8MPf/2.0"
   },
   {
+    "Name": "Google Pixel 3A",
     "Weight": "147g",
     "Dimensions": "151.3 x 70.1 x8.2mm",
     "OS": "Android 9.0",
