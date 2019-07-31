@@ -45,9 +45,9 @@ const laptopQuestions = [
   }
 ];
 
-const desktopQuestions = [
+const tabletQuestions = [
   {
-    title: 'desktop',
+    title: 'tablet',
     answers: [
       '$400-$999', '$1000-$1399', '$1400-$1699', '$1700-$1999', '$2000 and Up'
     ],
@@ -119,8 +119,8 @@ function initQuestions(deviceChoice) {
   if(deviceChoice == 'laptop') {
     questions = laptopQuestions;
   }
-  else if(deviceChoice == 'desktop') {
-    questions = desktopQuestions;
+  else if(deviceChoice == 'tablet') {
+    questions = tabletQuestions;
   }
   else if(deviceChoice == 'phone') {
     questions = phoneQuestions;
