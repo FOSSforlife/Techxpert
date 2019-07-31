@@ -223,7 +223,7 @@ function addLaptop() {
   console.log(choice);
 }
 
-function addDekstop() {
+function addDesktop() {
   choice('device') = 'Desktop';
   console.log(choice);
 }
