@@ -21,7 +21,7 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a id="home-button" class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a id="home-button" class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">About Us</a>
@@ -49,20 +49,24 @@
         <div class="col-md-8">
           <div class="row mb-1">
             <div class="card card-answer col py-4 mr-1">
-              <a id="laptop-device" onclick="laptopQuestions()">
+              <a id="laptop-device">
                 <h3 class="card-title">Laptop</h3>
-                <img class="card-img-bottom" src="img/generic-desktop.jpg" alt="Laptop" />
+                <img class="card-img-bottom" src="img/generic-laptop.png" alt="Laptop" />
               </a>
             </div>
             <div class="card card-answer col py-4">
-              <h3 class="card-title" id="desktop-device">Desktop</h3>
-              <img class="card-img-bottom" src="img/generic-laptop.png" alt="Desktop" />
+              <a id="desktop-device">
+                <h3 class="card-title">Desktop</h3>
+                <img class="card-img-bottom" src="img/generic-desktop.jpg" alt="Desktop" />
+              </a>
             </div>
           </div>
           <div class="row mb-1">
             <div class="card card-answer col-6 py-4 mr-1">
-              <h3 class="card-title" id="phone-device">Phone</h3>
-              <img class="card-img-bottom" src="img/generic-phone.jpg" alt="Phone" />
+              <a id="phone-device">
+                <h3 class="card-title">Phone</h3>
+                <img class="card-img-bottom" src="img/generic-phone.jpg" alt="Phone" />
+              </a>
             </div>
           </div>
         </div>
@@ -87,7 +91,7 @@
       </div>
       <div class="row mb-5">
         <div class="col-md-2"></div>
-        <div class="col-md-8">
+        <div class="col-md-8" id="answer-section">
           <input type="checkbox" class="checkbox" id="check-a" /><button
             class="btn btn-lg btn-primary card-answer-noimg" id="answer-a">
             Yes</button><br />
@@ -106,31 +110,6 @@
         </div>
         <div class="col-md-2"></div>
       </div>
-    </div>
-  </section>
-
-  <section id="budget-slider">
-    <div class="container">
-      <div class="card card-question mb-4 mt-5">
-        <h2 class="card-title" id="budget-title">
-          What is your budget? (Drag the sliders)
-        </h2>
-      </div>
-      <div class="row mb-5">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-          Min: <input id="slider-min" type="range" /> 600 <br />
-          Max: <input id="slider-max" type="range" /> 1200
-        </div>
-        <div class="col-md-2"></div>
-      </div>
-      <p>
-        For some reason the sliders display way differently in Chrome vs
-        Firefox so we would have to add styling
-      </p>
-      <button class="btn btn-primary mt-2" id="budget-button">
-        Next
-      </button>
     </div>
   </section>
 
