@@ -49,16 +49,16 @@ const tabletQuestions = [
   {
     title: 'tablet',
     answers: [
-      '$400-$999', '$1000-$1399', '$1400-$1699', '$1700-$1999', '$2000 and Up'
+      '$200-300', '$301-400', '$401-500', '$501+'
     ],
     id: 'budget',
     // if 'jsonAnswers' is omitted, it will use 'answers' by default
   },
   {
     title: 'Which operating system do you prefer? If unsure, choose Microsoft Windows',
-    answers: ['Microsoft Windows', 'Apple MacOS'],
+    answers: ['Microsoft Windows', 'Apple iOS', 'Android'],
     id: 'os',
-    jsonAnswers: ['windows', 'macos']
+    jsonAnswers: ['windows', 'ios', 'android']
   },
   {
     title: 'What will be the primary use of this laptop?',
