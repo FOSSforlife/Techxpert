@@ -47,7 +47,7 @@ const laptopQuestions = [{
 ];
 
 const tabletQuestions = [{
-    title: 'tablet',
+    title: 'What is your budget?',
     answers: [
       '$200-300', '$301-400', '$401-500', '$501+'
     ],
@@ -81,7 +81,7 @@ const tabletQuestions = [{
 ];
 
 const phoneQuestions = [{
-    title: 'phone',
+    title: 'What is your budget?',
     answers: [
       '$300-400', '$401-500', '$501-$600', '$801-900', '$1000+'
     ],
@@ -176,9 +176,11 @@ function nextQuestion(answer) {
 
 function showResults() {
   document.getElementById('question-page').style.display = 'none';
-  let recievedData;
+  let url;
   if (fetchDataChoice == 'laptop') {
-    fetch('http://localhost:3000/products/laptops', {
+    url = new URL('http://localhost:3000/products/laptops');
+    url.search = new URLSearchParams(userAnswers);
+    fetch(url, {
         method: 'GET'
       })
       .then(function (response) {
@@ -224,7 +226,7 @@ function updateLaptopRecommendations(deviceData, device) {
   document.getElementById('img5').src = picSrc;
   document.getElementById('img6').src = picSrc;
 
-  let currentDevice = deviceData[0];
+  let currentDevice = deviceData[0].item;
   document.getElementById('device-title1').innerHTML = currentDevice['Model'];
   for (let key in currentDevice) {
     if (currentDevice[key] != '' && key != 'Model') {
@@ -235,7 +237,7 @@ function updateLaptopRecommendations(deviceData, device) {
     }
   }
 
-  currentDevice = deviceData[1];
+  currentDevice = deviceData[1].item;
   document.getElementById('device-title2').innerHTML = currentDevice['Model'];
   for (let key in currentDevice) {
     if (currentDevice[key] != '' && key != 'Model') {
@@ -246,7 +248,7 @@ function updateLaptopRecommendations(deviceData, device) {
     }
   }
 
-  currentDevice = deviceData[2];
+  currentDevice = deviceData[2].item;
   document.getElementById('device-title3').innerHTML = currentDevice['Model'];
   for (let key in currentDevice) {
     if (currentDevice[key] != '' && key != 'Model') {
@@ -268,7 +270,7 @@ function updateTabletRecommendations(deviceData) {
   document.getElementById('img5').src = picSrc;
   document.getElementById('img6').src = picSrc;
 
-  let currentDevice = deviceData[0];
+  let currentDevice = deviceData[0].item;
   document.getElementById('device-title1').innerHTML = currentDevice['Name'];
   for (let key in currentDevice) {
     if (currentDevice[key] != '' && key != 'Name') {
@@ -279,7 +281,7 @@ function updateTabletRecommendations(deviceData) {
     }
   }
 
-  currentDevice = deviceData[1];
+  currentDevice = deviceData[1].item;
   document.getElementById('device-title2').innerHTML = currentDevice['Name'];
   for (let key in currentDevice) {
     if (currentDevice[key] != '' && key != 'Name') {
@@ -290,7 +292,7 @@ function updateTabletRecommendations(deviceData) {
     }
   }
 
-  currentDevice = deviceData[2];
+  currentDevice = deviceData[2].item;
   document.getElementById('device-title3').innerHTML = currentDevice['Name'];
   for (let key in currentDevice) {
     if (currentDevice[key] != '' && key != "Name") {
@@ -312,7 +314,7 @@ function updatePhoneRecommendations(deviceData) {
   document.getElementById('img5').src = picSrc;
   document.getElementById('img6').src = picSrc;
 
-  let currentDevice = deviceData[0];
+  let currentDevice = deviceData[0].item;
   document.getElementById('device-title1').innerHTML = currentDevice['Name'];
   for (let key in currentDevice) {
     if (currentDevice[key] != '' && key != 'Name') {
@@ -323,7 +325,7 @@ function updatePhoneRecommendations(deviceData) {
     }
   }
 
-  currentDevice = deviceData[1];
+  currentDevice = deviceData[1].item;
   document.getElementById('device-title2').innerHTML = currentDevice['Name'];
   for (let key in currentDevice) {
     if (currentDevice[key] != '' && key != 'Name') {
@@ -334,7 +336,7 @@ function updatePhoneRecommendations(deviceData) {
     }
   }
 
-  currentDevice = deviceData[2];
+  currentDevice = deviceData[2].item;
   document.getElementById('device-title3').innerHTML = currentDevice['Name'];
   for (let key in currentDevice) {
     if (currentDevice[key] != '' && key != "Name") {
