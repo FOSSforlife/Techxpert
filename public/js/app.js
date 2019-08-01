@@ -47,7 +47,7 @@ const laptopQuestions = [{
 ];
 
 const tabletQuestions = [{
-    title: 'tablet',
+    title: 'What is your budget?',
     answers: [
       '$200-300', '$301-400', '$401-500', '$501+'
     ],
@@ -81,7 +81,7 @@ const tabletQuestions = [{
 ];
 
 const phoneQuestions = [{
-    title: 'phone',
+    title: 'What is your budget?',
     answers: [
       '$300-400', '$401-500', '$501-$600', '$801-900', '$1000+'
     ],
