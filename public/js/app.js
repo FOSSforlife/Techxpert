@@ -49,16 +49,16 @@ const tabletQuestions = [
   {
     title: 'tablet',
     answers: [
-      '$400-$999', '$1000-$1399', '$1400-$1699', '$1700-$1999', '$2000 and Up'
+      '$200-300', '$301-400', '$401-500', '$501+'
     ],
     id: 'budget',
     // if 'jsonAnswers' is omitted, it will use 'answers' by default
   },
   {
     title: 'Which operating system do you prefer? If unsure, choose Microsoft Windows',
-    answers: ['Microsoft Windows', 'Apple MacOS'],
+    answers: ['Microsoft Windows', 'Apple iOS', 'Android'],
     id: 'os',
-    jsonAnswers: ['windows', 'macos']
+    jsonAnswers: ['windows', 'ios', 'android']
   },
   {
     title: 'What will be the primary use of this laptop?',
@@ -133,14 +133,15 @@ function initQuestions(deviceChoice) {
 
 function nextQuestion(answer) {
   // save user response in userAnswers
+  console.log(`Answer is ${answer}`);
   let question;
   if(answer) {
     question = questions[currentQuestion];
     if(question.jsonAnswers) {
-      userAnswers[question.id] = question.jsonAnswers[answer];
+      userAnswers[question.id] = question.jsonAnswers[answer-1];
     }
     else {
-      userAnswers[question.id] = question.answers[answer];
+      userAnswers[question.id] = question.answers[answer-1];
     }
   }
 
@@ -152,6 +153,7 @@ function nextQuestion(answer) {
     document.getElementById(answerChoices[0]).innerHTML = "Submit";
     document.getElementById(answerChoices[1]).style.display = "none";
     document.getElementById(answerChoices[2]).style.display = "none";
+    console.log(userAnswers);
   } else {
     questionTitle.innerHTML = question.title;
     let currentAnswers = question.answers;
