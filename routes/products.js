@@ -105,10 +105,13 @@ if(query.primaryUse == 'travel')
     ultraportable = JSON.parse(ultraportable);
     for (let i = 0; i < ultraportable.length; i++) {
       if (parseInt(ultraportable[i].Price.substring(1) <= query.budget)) {
+        if((ultraportable[i].Model.contains("Macbook") && (query.os == "macos")) || (!(ultraportable[i].Model.contains("Macbook")) && (query.os == "windows"))) {
           let score = scoreLaptop(i);
           laptopList.push({points: score, item: i})
+          }
         }
       }
+
         laptopList.sort(compareLaptops);
         laptopList.reverse();
         return (laptopList.slice(0,4));
@@ -121,47 +124,53 @@ else if(query.primaryUse == 'gaming')
     let gaming = fs.readFileSync('data/laptops/gaming.json');
     gaming = JSON.parse(gaming);
     for (let i = 0; i < gaming.length; i++) {
-      //console.log(gaming[i]);
-      //console.log(gaming[i].Price.substring(1));
-      if ((parseInt(gaming[i].Price.substring(1)) <= query.budget)) {
 
-        //console.log(query.budget);
+        if ((parseInt(gaming[i].Price.substring(1)) <= query.budget)) {
+          if(((gaming[i].Model.contains("Macbook") && (query.os == "macos")) || (!(gaming[i].Model.contains("Macbook")) && (query.os == "windows"))) {
           let score = scoreLaptop(gaming[i]);
           laptopList.push({points: score, item: gaming[i]})
+          }
         }
       }
+
         laptopList.sort(compareLaptops);
         laptopList.reverse();
         return (laptopList.slice(0,4));
     }
 
-else if(query.primaryUse == 'gaming')
+else if(query.primaryUse == 'compute')
 {
   //sorting code goes here
     let programming = fs.readFileSync('data/laptops/programming.json');
     programming = JSON.parse(programming);
     for (let i = 0; i < programming.length; i++) {
+      if(((programming[i].Model.contains("Macbook") && (query.os == "macos")) || (!(programming[i].Model.contains("Macbook")) && (query.os == "windows"))) {
       if (parseInt(programming[i].Price.substring(1) <= query.budget)) {
           let score = scoreLaptop(i);
           laptopList.push({points: score, item: i})
+          }
         }
       }
+
         laptopList.sort(compareLaptops);
         laptopList.reverse();
         return (laptopList.slice(0,4));
     }
 
-else if(query.primaryUse == 'web')
+else if(query.primaryUse == 'mainstream')
 {
   //sorting code goes here
     let mainstream = fs.readFileSync('data/laptops/mainstream.json');
     mainstream = JSON.parse(mainstream);
     for (let i = 0; i < mainstream.length; i++) {
+      if(((mainstream[i].Model.contains("Macbook") && (query.os == "macos")) || (!(mainstream[i].Model.contains("Macbook")) && (query.os == "windows"))) {
       if (parseInt(mainstream[i].Price.substring(1) <= query.budget)) {
           let score = scoreLaptop(i);
           laptopList.push({points: score, item: i})
+          }
         }
       }
+
         laptopList.sort(compareLaptops);
         laptopList.reverse();
         return (laptopList.slice(0,4));
