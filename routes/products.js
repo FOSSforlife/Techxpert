@@ -135,7 +135,7 @@ else if(query.primaryUse == 'gaming')
         return (laptopList.slice(0,4));
     }
 
-else if(query.primaryUse == 'compute')
+else if(query.primaryUse == 'gaming')
 {
   //sorting code goes here
     let programming = fs.readFileSync('data/laptops/programming.json');
@@ -151,7 +151,7 @@ else if(query.primaryUse == 'compute')
         return (laptopList.slice(0,4));
     }
 
-else if(query.primaryUse == 'mainstream')
+else if(query.primaryUse == 'web')
 {
   //sorting code goes here
     let mainstream = fs.readFileSync('data/laptops/mainstream.json');
