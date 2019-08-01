@@ -133,14 +133,15 @@ function initQuestions(deviceChoice) {
 
 function nextQuestion(answer) {
   // save user response in userAnswers
+  console.log(`Answer is ${answer}`);
   let question;
   if(answer) {
     question = questions[currentQuestion];
     if(question.jsonAnswers) {
-      userAnswers[question.id] = question.jsonAnswers[answer];
+      userAnswers[question.id] = question.jsonAnswers[answer-1];
     }
     else {
-      userAnswers[question.id] = question.answers[answer];
+      userAnswers[question.id] = question.answers[answer-1];
     }
   }
 
@@ -152,6 +153,7 @@ function nextQuestion(answer) {
     document.getElementById(answerChoices[0]).innerHTML = "Submit";
     document.getElementById(answerChoices[1]).style.display = "none";
     document.getElementById(answerChoices[2]).style.display = "none";
+    console.log(userAnswers);
   } else {
     questionTitle.innerHTML = question.title;
     let currentAnswers = question.answers;
