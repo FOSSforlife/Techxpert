@@ -50,13 +50,13 @@
             <div class="card card-answer col py-4 mr-1">
               <a id="laptop-device" onclick="initQuestions('laptop')">
                 <h3 class="card-title">Laptop</h3>
-                <img class="card-img-bottom" src="img/generic-laptop.png" alt="Laptop" />
+                <img id="img1" class="card-img-bottom" src="img/generic-laptop.png" alt="Laptop" />
               </a>
             </div>
             <div class="card card-answer col py-4">
               <a id="tablet-device" onclick="initQuestions('tablet')">
                 <h3 class="card-title">Tablet</h3>
-                <img class="card-img-bottom" src="img/generic-tablet.jpg" alt="Desktop" />
+                <img id="img2" class="card-img-bottom" src="img/generic-tablet.jpg" alt="Desktop" />
               </a>
             </div>
           </div>
@@ -64,7 +64,7 @@
             <div class="card card-answer col-6 py-4 mr-1">
               <a id="phone-device" onclick="initQuestions('phone')">
                 <h3 class="card-title">Phone</h3>
-                <img class="card-img-bottom" src="img/generic-phone.jpg" alt="Phone" />
+                <img id="img3" class="card-img-bottom" src="img/generic-phone.jpg" alt="Phone" />
               </a>
             </div>
           </div>
@@ -125,18 +125,22 @@
 
       <div class="row">
         <div class="col card mr-4">
-          <h2 class="card-title">Acer 13" 2-in-1</h2>
+          <h2 class="card-title" id="device-title1"></h2>
           <img class="card-img-bottom" src="img/generic-laptop.png" alt="Laptop 1">
+          <ul class="list-group" id="device-specs1">
+          </ul>
         </div>
 
         <div class="col card mr-4">
-          <h2 class="card-title">Dell XPS 13</h2>
+          <h2 class="card-title" id="device-title2"></h2>
           <img class="card-img-bottom" src="img/generic-laptop.png" alt="Laptop 2">
+          <ul class="list-group" id="device-specs2"></ul>
         </div>
 
         <div class="col card mr-4">
-          <h2 class="card-title">System76 Gazelle</h2>
+          <h2 class="card-title" id="device-title3"></h2>
           <img class="card-img-bottom" src="img/generic-laptop.png" alt="Laptop 3">
+          <ul class="list-group" id="device-specs3"></ul>
         </div>
       </div>
 

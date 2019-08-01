@@ -186,6 +186,7 @@ function showResults() {
       })
       .then(function (json) {
         console.log(json);
+        updateLaptopRecommendations(json);
       });
   } else if (fetchDataChoice == 'tablet') {
     fetch('http://localhost:3000/products/tablets', {
@@ -196,6 +197,7 @@ function showResults() {
       })
       .then(function (json) {
         console.log(json);
+        updateTabletRecommendations(json);
       });
   } else if (fetchDataChoice == 'phone') {
     fetch('http://localhost:3000/products/phones', {
@@ -206,8 +208,143 @@ function showResults() {
       })
       .then(function (json) {
         console.log(json);
+        updatePhoneRecommendations(json);
       });
   }
 
   document.getElementById('recommendation-page').style.display = 'inline';
+}
+
+function updateLaptopRecommendations(deviceData, device) {
+  let list1 = document.getElementById('device-specs1');
+  let list2 = document.getElementById('device-specs2');
+  let list3 = document.getElementById('device-specs3');
+  let picSrc;
+
+  picSrc = './img/generic-laptop.jpg';
+
+  document.getElementById('img1').src = picSrc;
+  document.getElementById('img1').src = picSrc;
+  document.getElementById('img1').src = picSrc;
+
+  let currentDevice = deviceData[0];
+  document.getElementById('device-title1').innerHTML = currentDevice['Model'];
+  for (let key in currentDevice) {
+    if (currentDevice[key] != '' && key != 'Model') {
+      let newListItem = document.createElement('li');
+      newListItem.classList.add('list-group-item');
+      newListItem.innerHTML = `${key} : ${currentDevice[key]}`
+      list1.appendChild(newListItem);
+    }
+  }
+
+  currentDevice = deviceData[1];
+  document.getElementById('device-title2').innerHTML = currentDevice['Model'];
+  for (let key in currentDevice) {
+    if (currentDevice[key] != '' && key != 'Model') {
+      let newListItem = document.createElement('li');
+      newListItem.classList.add('list-group-item');
+      newListItem.innerHTML = `${key} : ${currentDevice[key]}`
+      list2.appendChild(newListItem);
+    }
+  }
+
+  currentDevice = deviceData[2];
+  document.getElementById('device-title3').innerHTML = currentDevice['Model'];
+  for (let key in currentDevice) {
+    if (currentDevice[key] != '' && key != 'Model') {
+      let newListItem = document.createElement('li');
+      newListItem.classList.add('list-group-item');
+      newListItem.innerHTML = `${key} : ${currentDevice[key]}`
+      list3.appendChild(newListItem);
+    }
+  }
+}
+
+function updateTabletRecommendations(deviceData) {
+  let list1 = document.getElementById('device-specs1');
+  let list2 = document.getElementById('device-specs2');
+  let list3 = document.getElementById('device-specs3');
+  let picSrc = './img/generic-tablet.jpg';
+
+  document.getElementById('img1').src = picSrc;
+  document.getElementById('img2').src = picSrc;
+  document.getElementById('img3').src = picSrc;
+
+  let currentDevice = deviceData[0];
+  document.getElementById('device-title1').innerHTML = currentDevice['Name'];
+  for (let key in currentDevice) {
+    if (currentDevice[key] != '' && key != 'Name') {
+      let newListItem = document.createElement('li');
+      newListItem.classList.add('list-group-item');
+      newListItem.innerHTML = `${key} : ${currentDevice[key]}`
+      list1.appendChild(newListItem);
+    }
+  }
+
+  currentDevice = deviceData[1];
+  document.getElementById('device-title2').innerHTML = currentDevice['Name'];
+  for (let key in currentDevice) {
+    if (currentDevice[key] != '' && key != 'Name') {
+      let newListItem = document.createElement('li');
+      newListItem.classList.add('list-group-item');
+      newListItem.innerHTML = `${key} : ${currentDevice[key]}`
+      list2.appendChild(newListItem);
+    }
+  }
+
+  currentDevice = deviceData[2];
+  document.getElementById('device-title3').innerHTML = currentDevice['Name'];
+  for (let key in currentDevice) {
+    if (currentDevice[key] != '' && key != "Name") {
+      let newListItem = document.createElement('li');
+      newListItem.classList.add('list-group-item');
+      newListItem.innerHTML = `${key} : ${currentDevice[key]}`
+      list3.appendChild(newListItem);
+    }
+  }
+}
+
+function updatePhoneRecommendations(deviceData) {
+  let list1 = document.getElementById('device-specs1');
+  let list2 = document.getElementById('device-specs2');
+  let list3 = document.getElementById('device-specs3');
+  let picSrc = '/img/generic-tablet.jpg';
+
+  document.getElementById('img1').src = picSrc;
+  document.getElementById('img2').src = picSrc;
+  document.getElementById('img3').src = picSrc;
+
+  let currentDevice = deviceData[0];
+  document.getElementById('device-title1').innerHTML = currentDevice['Name'];
+  for (let key in currentDevice) {
+    if (currentDevice[key] != '' && key != 'Name') {
+      let newListItem = document.createElement('li');
+      newListItem.classList.add('list-group-item');
+      newListItem.innerHTML = `${key} : ${currentDevice[key]}`
+      list1.appendChild(newListItem);
+    }
+  }
+
+  currentDevice = deviceData[1];
+  document.getElementById('device-title2').innerHTML = currentDevice['Name'];
+  for (let key in currentDevice) {
+    if (currentDevice[key] != '' && key != 'Name') {
+      let newListItem = document.createElement('li');
+      newListItem.classList.add('list-group-item');
+      newListItem.innerHTML = `${key} : ${currentDevice[key]}`
+      list2.appendChild(newListItem);
+    }
+  }
+
+  currentDevice = deviceData[2];
+  document.getElementById('device-title3').innerHTML = currentDevice['Name'];
+  for (let key in currentDevice) {
+    if (currentDevice[key] != '' && key != "Name") {
+      let newListItem = document.createElement('li');
+      newListItem.classList.add('list-group-item');
+      newListItem.innerHTML = `${key} : ${currentDevice[key]}`
+      list3.appendChild(newListItem);
+    }
+  }
 }
