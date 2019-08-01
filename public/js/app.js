@@ -211,7 +211,6 @@ function showResults() {
         updatePhoneRecommendations(json);
       });
   }
-
   document.getElementById('recommendation-page').style.display = 'inline';
 }
 
@@ -219,13 +218,11 @@ function updateLaptopRecommendations(deviceData, device) {
   let list1 = document.getElementById('device-specs1');
   let list2 = document.getElementById('device-specs2');
   let list3 = document.getElementById('device-specs3');
-  let picSrc;
+  let picSrc = '../img/generic-laptop.png';
 
-  picSrc = './img/generic-laptop.jpg';
-
-  document.getElementById('img1').src = picSrc;
-  document.getElementById('img1').src = picSrc;
-  document.getElementById('img1').src = picSrc;
+  document.getElementById('img4').src = picSrc;
+  document.getElementById('img5').src = picSrc;
+  document.getElementById('img6').src = picSrc;
 
   let currentDevice = deviceData[0];
   document.getElementById('device-title1').innerHTML = currentDevice['Model'];
@@ -265,11 +262,11 @@ function updateTabletRecommendations(deviceData) {
   let list1 = document.getElementById('device-specs1');
   let list2 = document.getElementById('device-specs2');
   let list3 = document.getElementById('device-specs3');
-  let picSrc = './img/generic-tablet.jpg';
+  let picSrc = '../img/generic-tablet.jpg';
 
-  document.getElementById('img1').src = picSrc;
-  document.getElementById('img2').src = picSrc;
-  document.getElementById('img3').src = picSrc;
+  document.getElementById('img4').src = picSrc;
+  document.getElementById('img5').src = picSrc;
+  document.getElementById('img6').src = picSrc;
 
   let currentDevice = deviceData[0];
   document.getElementById('device-title1').innerHTML = currentDevice['Name'];
@@ -309,11 +306,11 @@ function updatePhoneRecommendations(deviceData) {
   let list1 = document.getElementById('device-specs1');
   let list2 = document.getElementById('device-specs2');
   let list3 = document.getElementById('device-specs3');
-  let picSrc = '/img/generic-tablet.jpg';
+  let picSrc = '../img/generic-phone.jpg';
 
-  document.getElementById('img1').src = picSrc;
-  document.getElementById('img2').src = picSrc;
-  document.getElementById('img3').src = picSrc;
+  document.getElementById('img4').src = picSrc;
+  document.getElementById('img5').src = picSrc;
+  document.getElementById('img6').src = picSrc;
 
   let currentDevice = deviceData[0];
   document.getElementById('device-title1').innerHTML = currentDevice['Name'];
