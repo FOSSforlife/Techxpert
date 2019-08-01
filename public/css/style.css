@@ -69,10 +69,17 @@ form input {
   display: none;
 }
 
-#budget-slider {
+#recommendation-page {
   display: none;
 }
 
 .checkbox {
   display: none;
+}
+
+a{
+  color:black;
+}
+a:hover{
+  color:black;
 }

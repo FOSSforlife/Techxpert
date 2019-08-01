@@ -1,5 +1,6 @@
 let currentQuestion = -1;
 let deviceChoice = 'null';
+let fetchDataChoice;
 const questionTitle = document.getElementById('question-title');
 const answerA = document.getElementById('answer-a');
 const answerB = document.getElementById('answer-b');
@@ -11,8 +12,7 @@ const answerChoices = ['answer-a', 'answer-b', 'answer-c', 'answer-d', 'answer-e
 let questions;
 const userAnswers = {};
 
-const laptopQuestions = [
-  {
+const laptopQuestions = [{
     title: 'What is your budget?',
     answers: [
       '$400-$999', '$1000-$1399', '$1400-$1699', '$1700-$1999', '$2000 and Up'
@@ -45,8 +45,7 @@ const laptopQuestions = [
   }
 ];
 
-const tabletQuestions = [
-  {
+const tabletQuestions = [{
     title: 'tablet',
     answers: [
       '$200-300', '$301-400', '$401-500', '$501+'
@@ -80,28 +79,26 @@ const tabletQuestions = [
   }
 ];
 
-const phoneQuestions = [
-  {
+const phoneQuestions = [{
     title: 'phone',
     answers: [
-      '$400-$999', '$1000-$1399', '$1400-$1699', '$1700-$1999', '$2000 and Up'
+      '$300-400', '$401-500', '$501-$600', '$801-900', '$1000+'
     ],
     id: 'budget',
   },
   {
-    title: 'Which operating system do you prefer? If unsure, choose Microsoft Windows',
-    answers: ['Microsoft Windows', 'Apple MacOS'],
+    title: 'Which operating system do you prefer? If unsure, choose Andriod',
+    answers: ['Android', 'Apple iOS'],
     id: 'os',
-    jsonAnswers: ['windows', 'macos']
+    jsonAnswers: ['Andriod', 'iOS']
   },
   {
-    title: 'What will be the primary use of this laptop?',
+    title: 'What will be the primary use of this phone?',
     answers: [
-      'Web Browsing/Office Work', 'Gaming',
-      'Heavy Computing - Video Editing, Programming', 'Travel'
+      'Web Browsing/Office Work', 'Gaming/Entertainment', 'Texting/Phone Calls'
     ],
     id: 'primaryUse',
-    jsonAnswers: ['web', 'gaming', 'heavy', 'travel']
+    jsonAnswers: ['web', 'gaming', 'text']
   },
   {
     title: 'How much do you value portability and battery life?',
@@ -116,14 +113,15 @@ const phoneQuestions = [
 
 
 function initQuestions(deviceChoice) {
-  if(deviceChoice == 'laptop') {
+  if (deviceChoice == 'laptop') {
     questions = laptopQuestions;
-  }
-  else if(deviceChoice == 'tablet') {
+    fetchDataChoice = deviceChoice;
+  } else if (deviceChoice == 'tablet') {
     questions = tabletQuestions;
-  }
-  else if(deviceChoice == 'phone') {
+    fetchDataChoice = deviceChoice;
+  } else if (deviceChoice == 'phone') {
     questions = phoneQuestions;
+    fetchDataChoice = deviceChoice;
   }
 
   nextQuestion();
@@ -135,13 +133,12 @@ function nextQuestion(answer) {
   // save user response in userAnswers
   console.log(`Answer is ${answer}`);
   let question;
-  if(answer) {
+  if (answer) {
     question = questions[currentQuestion];
-    if(question.jsonAnswers) {
-      userAnswers[question.id] = question.jsonAnswers[answer-1];
-    }
-    else {
-      userAnswers[question.id] = question.answers[answer-1];
+    if (question.jsonAnswers) {
+      userAnswers[question.id] = question.jsonAnswers[answer - 1];
+    } else {
+      userAnswers[question.id] = question.answers[answer - 1];
     }
   }
 
@@ -149,10 +146,17 @@ function nextQuestion(answer) {
   currentQuestion++;
   question = questions[currentQuestion];
   if (currentQuestion >= questions.length) {
-    questionTitle.innerHTML = 'DONE';
-    document.getElementById(answerChoices[0]).innerHTML = "Submit";
+    questionTitle.innerHTML = 'Quiz Done. Click submit to recieve your recommendations!';
+    document.getElementById(answerChoices[0]).style.display = "none";
     document.getElementById(answerChoices[1]).style.display = "none";
     document.getElementById(answerChoices[2]).style.display = "none";
+    let btn = document.createElement("BUTTON");
+    btn.innerHTML = "Submit";
+    btn.classList.add("btn", "btn-lg", "btn-primary", "card-answer-noimg");
+    btn.setAttribute('id', 'submit-button');
+    document.getElementById('question-title').parentNode.insertAdjacentElement('afterend', btn);
+    let submitBtn = document.getElementById('submit-button');
+    submitBtn.addEventListener('click', showResults());
     console.log(userAnswers);
   } else {
     questionTitle.innerHTML = question.title;
@@ -166,4 +170,42 @@ function nextQuestion(answer) {
       }
     }
   }
+}
+
+function showResults() {
+  document.getElementById('question-page').style.display = 'none';
+  let recievedData;
+  if (fetchDataChoice == 'laptop') {
+    fetch('http://localhost:3000/products/laptops', {
+        method: 'GET'
+      })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (json) {
+        console.log(json);
+      });
+  } else if (fetchDataChoice == 'tablet') {
+    fetch('http://localhost:3000/products/tablets', {
+        method: 'GET'
+      })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (json) {
+        console.log(json);
+      });
+  } else if (fetchDataChoice == 'phone') {
+    fetch('http://localhost:3000/products/phones', {
+        method: 'GET'
+      })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (json) {
+        console.log(json);
+      });
+  }
+
+  document.getElementById('recommendation-page').style.display = 'inline';
 }
