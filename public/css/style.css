@@ -4,6 +4,10 @@
   background-color: #009bff;
 }
 
+.py-4:hover {
+  background-color: #009bff
+}
+
 .card-question .card-title {
   vertical-align: center;
   /* Doesn't work */
