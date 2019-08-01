@@ -107,10 +107,10 @@ if(query.primaryUse == 'travel')
     let ultraportable = fs.readFileSync('data/laptops/ultraportable.json');
     ultraportable = JSON.parse(ultraportable);
     for (let i = 0; i < ultraportable.length; i++) {
-      if (parseInt(ultraportable[i].Price.substring(1) <= query.budget)) {
+      if ((parseInt(ultraportable[i].Price.substring(1)) <= query.budget)) {
         if((ultraportable[i].Model.includes("Macbook") && (query.os == "macos")) || (!(ultraportable[i].Model.includes("Macbook")) && (query.os == "windows"))) {
           let score = scoreLaptop(ultraportable[i]);
-          laptopList.push({points: score, item: i})
+          laptopList.push({points: score, item: ultraportable[i]})
           }
         }
       }
@@ -150,10 +150,11 @@ else if(query.primaryUse == 'heavy')
     for (let i = 0; i < programming.length; i++) {
       if((programming[i].Model.includes("Macbook") && (query.os == "macos")) || (!(programming[i].Model.includes("Macbook")) && (query.os == "windows"))) {
           //console.log("hello");
-        if (parseInt(programming[i].Price.substring(1) <= query.budget)) {
+          //
+        if ((parseInt(programming[i].Price.substring(1)) <= query.budget)) {
           console.log("hello");
           let score = scoreLaptop(programming[i]);
-          laptopList.push({points: score, item: i})
+          laptopList.push({points: score, item: programming[i]})
           }
         }
       }
@@ -170,9 +171,9 @@ else if(query.primaryUse == 'web')
     mainstream = JSON.parse(mainstream);
     for (let i = 0; i < mainstream.length; i++) {
       if((mainstream[i].Model.includes("Macbook") && (query.os == "macos")) || (!(mainstream[i].Model.includes("Macbook")) && (query.os == "windows"))) {
-      if (parseInt(mainstream[i].Price.substring(1) <= query.budget)) {
+      if ((parseInt(mainstream[i].Price.substring(1)) <= query.budget)) {
           let score = scoreLaptop(mainstream[i]);
-          laptopList.push({points: score, item: i})
+          laptopList.push({points: score, item: mainstream[i]})
           }
         }
       }
