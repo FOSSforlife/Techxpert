@@ -106,7 +106,7 @@ if(query.primaryUse == 'travel')
     for (let i = 0; i < ultraportable.length; i++) {
       if (parseInt(ultraportable[i].Price.substring(1) <= query.budget)) {
         if((ultraportable[i].Model.includes("Macbook") && (query.os == "macos")) || (!(ultraportable[i].Model.includes("Macbook")) && (query.os == "windows"))) {
-          let score = scoreLaptop(i);
+          let score = scoreLaptop(ultraportable[i]);
           laptopList.push({points: score, item: i})
           }
         }
@@ -138,7 +138,7 @@ else if(query.primaryUse == 'gaming')
         return (laptopList.slice(0,4));
     }
 
-else if(query.primaryUse == 'compute')
+else if(query.primaryUse == 'heavy')
 {
   //sorting code goes here
     let programming = fs.readFileSync('data/laptops/programming.json');
@@ -146,7 +146,7 @@ else if(query.primaryUse == 'compute')
     for (let i = 0; i < programming.length; i++) {
       if((programming[i].Model.includes("Macbook") && (query.os == "macos")) || (!(programming[i].Model.includes("Macbook")) && (query.os == "windows"))) {
       if (parseInt(programming[i].Price.substring(1) <= query.budget)) {
-          let score = scoreLaptop(i);
+          let score = scoreLaptop(programming[i]);
           laptopList.push({points: score, item: i})
           }
         }
@@ -157,7 +157,7 @@ else if(query.primaryUse == 'compute')
         return (laptopList.slice(0,4));
     }
 
-else if(query.primaryUse == 'mainstream')
+else if(query.primaryUse == 'web')
 {
   //sorting code goes here
     let mainstream = fs.readFileSync('data/laptops/mainstream.json');
@@ -165,7 +165,7 @@ else if(query.primaryUse == 'mainstream')
     for (let i = 0; i < mainstream.length; i++) {
       if((mainstream[i].Model.includes("Macbook") && (query.os == "macos")) || (!(mainstream[i].Model.includes("Macbook")) && (query.os == "windows"))) {
       if (parseInt(mainstream[i].Price.substring(1) <= query.budget)) {
-          let score = scoreLaptop(i);
+          let score = scoreLaptop(mainstream[i]);
           laptopList.push({points: score, item: i})
           }
         }
