@@ -84,24 +84,23 @@ const phoneQuestions = [
   {
     title: 'phone',
     answers: [
-      '$400-$999', '$1000-$1399', '$1400-$1699', '$1700-$1999', '$2000 and Up'
+      '$300-400', '$401-500', '$501-$600', '$801-900', '$1000+'
     ],
     id: 'budget',
   },
   {
-    title: 'Which operating system do you prefer? If unsure, choose Microsoft Windows',
-    answers: ['Microsoft Windows', 'Apple MacOS'],
+    title: 'Which operating system do you prefer? If unsure, choose Andriod',
+    answers: ['Android', 'Apple iOS'],
     id: 'os',
-    jsonAnswers: ['windows', 'macos']
+    jsonAnswers: ['Andriod', 'iOS']
   },
   {
-    title: 'What will be the primary use of this laptop?',
+    title: 'What will be the primary use of this phone?',
     answers: [
-      'Web Browsing/Office Work', 'Gaming',
-      'Heavy Computing - Video Editing, Programming', 'Travel'
+      'Web Browsing/Office Work', 'Gaming/Entertainment', 'Texting/Phone Calls'
     ],
     id: 'primaryUse',
-    jsonAnswers: ['web', 'gaming', 'heavy', 'travel']
+    jsonAnswers: ['web', 'gaming', 'text']
   },
   {
     title: 'How much do you value portability and battery life?',
