@@ -12,19 +12,19 @@ const fs = require('fs');
 var laptopList = []; //laptoplist is the final returned list of the 4 highest ranked laptops for the given query
 //score each GPU
 function rankGPU(gpu) {
-  if(gpu.includes("Intel Graphics 620")) {
+  if(gpu.includes("Intel Graphics 620") || gpu.includes("Intel HD Graphics 500") || gpu.includes("Intel HD 6000")) {
       return 0.5;
   }
-  if(gpu.includes("Intel UHD Graphics 620")) {
+  if(gpu.includes("Intel UHD Graphics 620") || gpu.includes("AMD Radeon R5")) {
       return 1;
   }
-  if(gpu.includes("Nvidia MX150")) {
+  if(gpu.includes("Nvidia MX150") || gpu.includes("Iris")) {
       return 2;
   }
   if(gpu.includes("Nvidia GTX 1050Ti")) {
       return 4;
   }
-  if(gpu.includes("Nvidia GTX 1050")) {
+  if(gpu.includes("Nvidia GTX 1050") || gpu.includes("AMD Radeon Pro 450")) {
       return 3;
   }
   if(gpu.includes("Nvidia GTX 1060")) {
@@ -35,6 +35,9 @@ function rankGPU(gpu) {
   }
   if(gpu.includes("Nvidia GTX 1080")) {
       return 9;
+  }
+  else {
+  return 0.25;
   }
   };
 //score the CPU
@@ -143,9 +146,12 @@ else if(query.primaryUse == 'heavy')
   //sorting code goes here
     let programming = fs.readFileSync('data/laptops/programming.json');
     programming = JSON.parse(programming);
+
     for (let i = 0; i < programming.length; i++) {
       if((programming[i].Model.includes("Macbook") && (query.os == "macos")) || (!(programming[i].Model.includes("Macbook")) && (query.os == "windows"))) {
-      if (parseInt(programming[i].Price.substring(1) <= query.budget)) {
+          //console.log("hello");
+        if (parseInt(programming[i].Price.substring(1) <= query.budget)) {
+          console.log("hello");
           let score = scoreLaptop(programming[i]);
           laptopList.push({points: score, item: i})
           }
