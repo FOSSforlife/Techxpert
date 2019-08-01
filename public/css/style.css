@@ -80,3 +80,10 @@ form input {
 .checkbox {
   display: none;
 }
+
+a{
+  color:black;
+}
+a:hover{
+  color:black;
+}
