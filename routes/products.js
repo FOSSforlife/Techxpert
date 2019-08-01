@@ -4,41 +4,198 @@ const fs = require('fs');
 
 // the bulk of the code will go in these three functions
 // but feel free to make helper functions when necessary
-function getLaptops(query) {
-  // example of importing JSON
-  let convertible = fs.readFileSync('data/laptops/convertible.json');
-  convertible = JSON.parse(convertible);
 
-  return [convertible[5], convertible[7], convertible[11]];
+
+
+
+//object to store laptops returned from query
+var laptopList = []; //laptoplist is the final returned list of the 4 highest ranked laptops for the given query
+//score each GPU
+function rankGPU(gpu) {
+  if(gpu.includes("Intel Graphics 620")) {
+      return 0.5;
+  }
+  if(gpu.includes("Intel UHD Graphics 620")) {
+      return 1;
+  }
+  if(gpu.includes("Nvidia MX150")) {
+      return 2;
+  }
+  if(gpu.includes("Nvidia GTX 1050Ti")) {
+      return 4;
+  }
+  if(gpu.includes("Nvidia GTX 1050")) {
+      return 3;
+  }
+  if(gpu.includes("Nvidia GTX 1060")) {
+      return 6;
+  }
+  if(gpu.includes("Nvidia GTX 1070")) {
+      return 7;
+  }
+  if(gpu.includes("Nvidia GTX 1080")) {
+      return 9;
+  }
+  };
+//score the CPU
+function rankCPU(cpu) {
+  let score = 0;
+  if (cpu.includes('i7')) {
+    score += 8;
+  }
+  else if (cpu.includes('i5')) {
+    score += 5;
+  }
+  else if (cpu.includes('i3')) {
+    score += 3;
+  }
+  else {
+    score += 1;
+  }
+  if (cpu.includes('U')) { //U-series processors are less powerful
+    score /= 2;
+  }
+    return score;
 }
 
-function getTablets(query) {
-  let tablets = fs.readFileSync('data/tablets.json')
-  tablets = JSON.parse(tablets);
-  return [tablets[0], tablets[1], tablets[2]];
+//score the portability based on weight and batterylife
+function rankPortability(weight, batteryLife){
+
+  let portability = Number(batteryLife.split(" ")[0]);
+  if (Number(weight.split(" ")[0]) <= 3) {
+    portability += 6;
+  }
+  else if (Number(weight.split(" ")[0]) <= 5) {
+    portability += 4;
+  }
+  else if (Number(weight.split(" ")[0]) <= 7) {
+    portability += 1;
+  }
+  return portability;
+}
+
+//score the screen based on type and touch features
+function rankScreen(display, quality) {
+  let screenQuality = Number(quality.split('/')[0]);
+  if (display.includes("IPS")) {
+  screenQuality += 3;
+  }
+  if (display.includes("Touch")) {
+  screenQuality += 1;
+}
+
+  return screenQuality;
+}
+function scoreLaptop(laptop) {
+
+  //console.log(rankGPU(laptop.Graphics));
+
+  return (rankGPU(laptop.Graphics) + rankCPU(laptop.CPU) + rankPortability(laptop.Weight, laptop.Battery) + rankScreen(laptop.Display, laptop.Quality));
+}
+
+function compareLaptops(a,b){
+  return a.score - b.score;
+}
+function getLaptops(query) {
+
+  // example of importing JSON
+if(query.primaryUse == 'travel')
+  { //sorting code goes here
+    let ultraportable = fs.readFileSync('data/laptops/ultraportable.json');
+    ultraportable = JSON.parse(ultraportable);
+    for (let i = 0; i < ultraportable.length; i++) {
+      if (parseInt(ultraportable[i].Price.substring(1) <= query.budget)) {
+          let score = scoreLaptop(i);
+          laptopList.push({points: score, item: i})
+        }
+      }
+        laptopList.sort(compareLaptops);
+        laptopList.reverse();
+        return (laptopList.slice(0,4));
+    }
+
+else if(query.primaryUse == 'gaming')
+{
+
+  //sorting code goes here
+    let gaming = fs.readFileSync('data/laptops/gaming.json');
+    gaming = JSON.parse(gaming);
+    for (let i = 0; i < gaming.length; i++) {
+      //console.log(gaming[i]);
+      //console.log(gaming[i].Price.substring(1));
+      if ((parseInt(gaming[i].Price.substring(1)) <= query.budget)) {
+
+        //console.log(query.budget);
+          let score = scoreLaptop(gaming[i]);
+          laptopList.push({points: score, item: gaming[i]})
+        }
+      }
+        laptopList.sort(compareLaptops);
+        laptopList.reverse();
+        return (laptopList.slice(0,4));
+    }
+
+else if(query.primaryUse == 'compute')
+{
+  //sorting code goes here
+    let programming = fs.readFileSync('data/laptops/programming.json');
+    programming = JSON.parse(programming);
+    for (let i = 0; i < programming.length; i++) {
+      if (parseInt(programming[i].Price.substring(1) <= query.budget)) {
+          let score = scoreLaptop(i);
+          laptopList.push({points: score, item: i})
+        }
+      }
+        laptopList.sort(compareLaptops);
+        laptopList.reverse();
+        return (laptopList.slice(0,4));
+    }
+
+else if(query.primaryUse == 'mainstream')
+{
+  //sorting code goes here
+    let mainstream = fs.readFileSync('data/laptops/mainstream.json');
+    mainstream = JSON.parse(mainstream);
+    for (let i = 0; i < mainstream.length; i++) {
+      if (parseInt(mainstream[i].Price.substring(1) <= query.budget)) {
+          let score = scoreLaptop(i);
+          laptopList.push({points: score, item: i})
+        }
+      }
+        laptopList.sort(compareLaptops);
+        laptopList.reverse();
+        return (laptopList.slice(0,4));
+    }
+}
+
+
+function getDesktops(query) {
+  return {
+    sample: 'data'
+  };
 }
 
 function getPhones(query) {
-  let phones = fs.readFileSync('data/phones.json')
-  phones = JSON.parse(phones);
-  return [phones[0], phones[1], phones[2]];
+  return {
+    sample: 'data'
+  };
 }
 
 // localhost:3000/products/laptops
 router.get('/laptops', function (req, res, next) {
-  const laptops = getLaptops(req); // req contains all of the form data  
+  const laptops = getLaptops(req.query); // req contains all of the form data
   res.json(laptops);
 });
 
-// localhost:3000/products/tablets
-router.get('/tablets', function (req, res, next) {
-  const tablets = getTablets(req);
-  res.json(tablets);
+// localhost:3000/products/desktops
+router.get('/desktops', function (req, res, next) {
+  const desktops = getDesktops(req.query);
+  res.json(desktops);
 });
 
 // localhost:3000/products/phones
 router.get('/phones', function (req, res, next) {
-  const phones = getPhones(req);
+  const phones = getPhones(req.query);
   res.json(phones);
   // res.send('Hello world');
 });
