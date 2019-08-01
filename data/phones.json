@@ -61,7 +61,7 @@
   {
     "Name": "Google Pixel 3 XL",
     "Weight": "184g",
-    "Price":"$599";
+    "Price":"$599",
     "Dimensions": "158 x 76.7 x7.9mm",
     "OS": "Android 9.0",
     "Screen size": "6.3 inches",
@@ -121,7 +121,7 @@
   {
     "Name": "Sony Xperia 10 Plus",
     "Weight": "180g",
-    "Price": "$334"
+    "Price": "$334",
     "Dimensions": "167 x 73 x8.3mm",
     "OS": "Android 9.0 Pie",
     "Screen size": "6.5 inches",

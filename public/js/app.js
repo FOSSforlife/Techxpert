@@ -18,6 +18,7 @@ const laptopQuestions = [{
       '$400-$999', '$1000-$1399', '$1400-$1699', '$1700-$1999', '$2000 and Up'
     ],
     id: 'budget',
+    jsonAnswers: [1000, 1400, 1700, 2000, 6000]
   },
   {
     title: 'Which operating system do you prefer? If unsure, choose Microsoft Windows',
@@ -51,7 +52,7 @@ const tabletQuestions = [{
       '$200-300', '$301-400', '$401-500', '$501+'
     ],
     id: 'budget',
-    // if 'jsonAnswers' is omitted, it will use 'answers' by default
+    jsonAnswers: [300, 400, 500, 3000]
   },
   {
     title: 'Which operating system do you prefer? If unsure, choose Microsoft Windows',
@@ -85,6 +86,7 @@ const phoneQuestions = [{
       '$300-400', '$401-500', '$501-$600', '$801-900', '$1000+'
     ],
     id: 'budget',
+    jsonAnswers: [400, 500, 600, 900, 1500]
   },
   {
     title: 'Which operating system do you prefer? If unsure, choose Andriod',
