@@ -126,7 +126,7 @@ else if(query.primaryUse == 'gaming')
     for (let i = 0; i < gaming.length; i++) {
 
         if ((parseInt(gaming[i].Price.substring(1)) <= query.budget)) {
-          if(((gaming[i].Model.contains("Macbook") && (query.os == "macos")) || (!(gaming[i].Model.contains("Macbook")) && (query.os == "windows"))) {
+          if((gaming[i].Model.contains("Macbook") && (query.os == "macos")) || (!(gaming[i].Model.contains("Macbook")) && (query.os == "windows"))) {
           let score = scoreLaptop(gaming[i]);
           laptopList.push({points: score, item: gaming[i]})
           }
@@ -144,7 +144,7 @@ else if(query.primaryUse == 'compute')
     let programming = fs.readFileSync('data/laptops/programming.json');
     programming = JSON.parse(programming);
     for (let i = 0; i < programming.length; i++) {
-      if(((programming[i].Model.contains("Macbook") && (query.os == "macos")) || (!(programming[i].Model.contains("Macbook")) && (query.os == "windows"))) {
+      if((programming[i].Model.contains("Macbook") && (query.os == "macos")) || (!(programming[i].Model.contains("Macbook")) && (query.os == "windows"))) {
       if (parseInt(programming[i].Price.substring(1) <= query.budget)) {
           let score = scoreLaptop(i);
           laptopList.push({points: score, item: i})
@@ -163,7 +163,7 @@ else if(query.primaryUse == 'mainstream')
     let mainstream = fs.readFileSync('data/laptops/mainstream.json');
     mainstream = JSON.parse(mainstream);
     for (let i = 0; i < mainstream.length; i++) {
-      if(((mainstream[i].Model.contains("Macbook") && (query.os == "macos")) || (!(mainstream[i].Model.contains("Macbook")) && (query.os == "windows"))) {
+      if((mainstream[i].Model.contains("Macbook") && (query.os == "macos")) || (!(mainstream[i].Model.contains("Macbook")) && (query.os == "windows"))) {
       if (parseInt(mainstream[i].Price.substring(1) <= query.budget)) {
           let score = scoreLaptop(i);
           laptopList.push({points: score, item: i})
