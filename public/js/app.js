@@ -220,7 +220,7 @@ function showResults() {
   document.getElementById('recommendation-page').style.display = 'inline';
 }
 
-function updateLaptopRecommendations(deviceData, device) {
+function updateLaptopRecommendations(deviceData) {
   let list1 = document.getElementById('device-specs1');
   let list2 = document.getElementById('device-specs2');
   let list3 = document.getElementById('device-specs3');
@@ -229,38 +229,46 @@ function updateLaptopRecommendations(deviceData, device) {
   document.getElementById('img4').src = picSrc;
   document.getElementById('img5').src = picSrc;
   document.getElementById('img6').src = picSrc;
+  document.getElementById('recommendation-title').innerHTML = 'Laptop Recommendations';
 
-  let currentDevice = deviceData[0].item;
-  document.getElementById('device-title1').innerHTML = currentDevice['Model'];
-  for (let key in currentDevice) {
-    if (currentDevice[key] != '' && key != 'Model') {
-      let newListItem = document.createElement('li');
-      newListItem.classList.add('list-group-item');
-      newListItem.innerHTML = `${key} : ${currentDevice[key]}`
-      list1.appendChild(newListItem);
-    }
-  }
+  if (deviceData.length == 0) {
+    alert("No matches found! Please try again.");
+    location.reload();
+  } else {
+    let currentDevice = deviceData[0].item;
+    document.getElementById('device-title1').innerHTML = currentDevice['Model'];
 
-  currentDevice = deviceData[1].item;
-  document.getElementById('device-title2').innerHTML = currentDevice['Model'];
-  for (let key in currentDevice) {
-    if (currentDevice[key] != '' && key != 'Model') {
-      let newListItem = document.createElement('li');
-      newListItem.classList.add('list-group-item');
-      newListItem.innerHTML = `${key} : ${currentDevice[key]}`
-      list2.appendChild(newListItem);
+    for (let key in currentDevice) {
+      if (currentDevice[key] != '' && key != 'Model') {
+        let newListItem = document.createElement('li');
+        newListItem.classList.add('list-group-item');
+        newListItem.innerHTML = `${key} : ${currentDevice[key]}`
+        list1.appendChild(newListItem);
+      }
     }
-  }
 
-  currentDevice = deviceData[2].item;
-  document.getElementById('device-title3').innerHTML = currentDevice['Model'];
-  for (let key in currentDevice) {
-    if (currentDevice[key] != '' && key != 'Model') {
-      let newListItem = document.createElement('li');
-      newListItem.classList.add('list-group-item');
-      newListItem.innerHTML = `${key} : ${currentDevice[key]}`
-      list3.appendChild(newListItem);
+    currentDevice = deviceData[1].item;
+    document.getElementById('device-title2').innerHTML = currentDevice['Model'];
+    for (let key in currentDevice) {
+      if (currentDevice[key] != '' && key != 'Model') {
+        let newListItem = document.createElement('li');
+        newListItem.classList.add('list-group-item');
+        newListItem.innerHTML = `${key} : ${currentDevice[key]}`
+        list2.appendChild(newListItem);
+      }
     }
+
+    currentDevice = deviceData[2].item;
+    document.getElementById('device-title3').innerHTML = currentDevice['Model'];
+    for (let key in currentDevice) {
+      if (currentDevice[key] != '' && key != 'Model') {
+        let newListItem = document.createElement('li');
+        newListItem.classList.add('list-group-item');
+        newListItem.innerHTML = `${key} : ${currentDevice[key]}`
+        list3.appendChild(newListItem);
+      }
+    }
+
   }
 }
 
@@ -273,37 +281,43 @@ function updateTabletRecommendations(deviceData) {
   document.getElementById('img4').src = picSrc;
   document.getElementById('img5').src = picSrc;
   document.getElementById('img6').src = picSrc;
+  document.getElementById('recommendation-title').innerHTML = 'Tablet Recommendations'
 
-  let currentDevice = deviceData[0].item;
-  document.getElementById('device-title1').innerHTML = currentDevice['Name'];
-  for (let key in currentDevice) {
-    if (currentDevice[key] != '' && key != 'Name') {
-      let newListItem = document.createElement('li');
-      newListItem.classList.add('list-group-item');
-      newListItem.innerHTML = `${key} : ${currentDevice[key]}`
-      list1.appendChild(newListItem);
+  if (deviceData.length == 0) {
+    alert("No matches found! Please try again.");
+    location.reload();
+  } else {
+    let currentDevice = deviceData[0].item;
+    document.getElementById('device-title1').innerHTML = currentDevice['Name'];
+    for (let key in currentDevice) {
+      if (currentDevice[key] != '' && key != 'Name') {
+        let newListItem = document.createElement('li');
+        newListItem.classList.add('list-group-item');
+        newListItem.innerHTML = `${key} : ${currentDevice[key]}`
+        list1.appendChild(newListItem);
+      }
     }
-  }
 
-  currentDevice = deviceData[1].item;
-  document.getElementById('device-title2').innerHTML = currentDevice['Name'];
-  for (let key in currentDevice) {
-    if (currentDevice[key] != '' && key != 'Name') {
-      let newListItem = document.createElement('li');
-      newListItem.classList.add('list-group-item');
-      newListItem.innerHTML = `${key} : ${currentDevice[key]}`
-      list2.appendChild(newListItem);
+    currentDevice = deviceData[1].item;
+    document.getElementById('device-title2').innerHTML = currentDevice['Name'];
+    for (let key in currentDevice) {
+      if (currentDevice[key] != '' && key != 'Name') {
+        let newListItem = document.createElement('li');
+        newListItem.classList.add('list-group-item');
+        newListItem.innerHTML = `${key} : ${currentDevice[key]}`
+        list2.appendChild(newListItem);
+      }
     }
-  }
 
-  currentDevice = deviceData[2].item;
-  document.getElementById('device-title3').innerHTML = currentDevice['Name'];
-  for (let key in currentDevice) {
-    if (currentDevice[key] != '' && key != "Name") {
-      let newListItem = document.createElement('li');
-      newListItem.classList.add('list-group-item');
-      newListItem.innerHTML = `${key} : ${currentDevice[key]}`
-      list3.appendChild(newListItem);
+    currentDevice = deviceData[2].item;
+    document.getElementById('device-title3').innerHTML = currentDevice['Name'];
+    for (let key in currentDevice) {
+      if (currentDevice[key] != '' && key != "Name") {
+        let newListItem = document.createElement('li');
+        newListItem.classList.add('list-group-item');
+        newListItem.innerHTML = `${key} : ${currentDevice[key]}`
+        list3.appendChild(newListItem);
+      }
     }
   }
 }
@@ -317,37 +331,43 @@ function updatePhoneRecommendations(deviceData) {
   document.getElementById('img4').src = picSrc;
   document.getElementById('img5').src = picSrc;
   document.getElementById('img6').src = picSrc;
+  document.getElementById('recommendation-title').innerHTML = 'Phone Recommendations'
 
-  let currentDevice = deviceData[0].item;
-  document.getElementById('device-title1').innerHTML = currentDevice['Name'];
-  for (let key in currentDevice) {
-    if (currentDevice[key] != '' && key != 'Name') {
-      let newListItem = document.createElement('li');
-      newListItem.classList.add('list-group-item');
-      newListItem.innerHTML = `${key} : ${currentDevice[key]}`
-      list1.appendChild(newListItem);
+  if (deviceData.length == 0) {
+    alert("No matches found! Please try again.");
+    location.reload();
+  } else {
+    let currentDevice = deviceData[0].item;
+    document.getElementById('device-title1').innerHTML = currentDevice['Name'];
+    for (let key in currentDevice) {
+      if (currentDevice[key] != '' && key != 'Name') {
+        let newListItem = document.createElement('li');
+        newListItem.classList.add('list-group-item');
+        newListItem.innerHTML = `${key} : ${currentDevice[key]}`
+        list1.appendChild(newListItem);
+      }
     }
-  }
 
-  currentDevice = deviceData[1].item;
-  document.getElementById('device-title2').innerHTML = currentDevice['Name'];
-  for (let key in currentDevice) {
-    if (currentDevice[key] != '' && key != 'Name') {
-      let newListItem = document.createElement('li');
-      newListItem.classList.add('list-group-item');
-      newListItem.innerHTML = `${key} : ${currentDevice[key]}`
-      list2.appendChild(newListItem);
+    currentDevice = deviceData[1].item;
+    document.getElementById('device-title2').innerHTML = currentDevice['Name'];
+    for (let key in currentDevice) {
+      if (currentDevice[key] != '' && key != 'Name') {
+        let newListItem = document.createElement('li');
+        newListItem.classList.add('list-group-item');
+        newListItem.innerHTML = `${key} : ${currentDevice[key]}`
+        list2.appendChild(newListItem);
+      }
     }
-  }
 
-  currentDevice = deviceData[2].item;
-  document.getElementById('device-title3').innerHTML = currentDevice['Name'];
-  for (let key in currentDevice) {
-    if (currentDevice[key] != '' && key != "Name") {
-      let newListItem = document.createElement('li');
-      newListItem.classList.add('list-group-item');
-      newListItem.innerHTML = `${key} : ${currentDevice[key]}`
-      list3.appendChild(newListItem);
+    currentDevice = deviceData[2].item;
+    document.getElementById('device-title3').innerHTML = currentDevice['Name'];
+    for (let key in currentDevice) {
+      if (currentDevice[key] != '' && key != "Name") {
+        let newListItem = document.createElement('li');
+        newListItem.classList.add('list-group-item');
+        newListItem.innerHTML = `${key} : ${currentDevice[key]}`
+        list3.appendChild(newListItem);
+      }
     }
   }
 }
