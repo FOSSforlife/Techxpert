@@ -149,7 +149,9 @@ function nextQuestion(answer) {
   question = questions[currentQuestion];
   if (currentQuestion >= questions.length) {
     questionTitle.innerHTML = 'DONE';
-    console.log(userAnswers);
+    document.getElementById(answerChoices[0]).innerHTML = "Submit";
+    document.getElementById(answerChoices[1]).style.display = "none";
+    document.getElementById(answerChoices[2]).style.display = "none";
   } else {
     questionTitle.innerHTML = question.title;
     let currentAnswers = question.answers;
