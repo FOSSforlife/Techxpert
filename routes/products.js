@@ -100,6 +100,7 @@ function compareLaptops(a,b){
   return a.score - b.score;
 }
 function getLaptops(query) {
+  laptopList = [];
 
   // example of importing JSON
 if(query.primaryUse == 'travel')

@@ -191,7 +191,9 @@ function showResults() {
         updateLaptopRecommendations(json);
       });
   } else if (fetchDataChoice == 'tablet') {
-    fetch('http://localhost:3000/products/tablets', {
+    url = new URL('http://localhost:3000/products/tablets');
+    url.search = new URLSearchParams(userAnswers);
+    fetch(url, {
         method: 'GET'
       })
       .then(function (response) {
@@ -202,7 +204,9 @@ function showResults() {
         updateTabletRecommendations(json);
       });
   } else if (fetchDataChoice == 'phone') {
-    fetch('http://localhost:3000/products/phones', {
+    url = new URL('http://localhost:3000/products/phones');
+    url.search = new URLSearchParams(userAnswers);
+    fetch(url, {
         method: 'GET'
       })
       .then(function (response) {
