@@ -186,16 +186,20 @@ else if(query.primaryUse == 'web')
 }
 
 
-function getDesktops(query) {
-  return {
-    sample: 'data'
-  };
+function getTablets(query) {
+  let tablets = fs.readFileSync('data/tablets.json')
+  tablets = JSON.parse(tablets);
+
+  let randomNumbers = new Array(3).fill(0).map(() => Math.floor(Math.random()*11))
+  return randomNumbers.map(num => {return {item: tablets[num]}});
+  // return [tablets[0], tablets[1], tablets[2]].map(obj => {return {item: obj}});
 }
 
 function getPhones(query) {
-  return {
-    sample: 'data'
-  };
+  let phones = fs.readFileSync('data/phones.json')
+  phones = JSON.parse(phones);
+  let randomNumbers = new Array(3).fill(0).map(() => Math.floor(Math.random()*11))
+  return randomNumbers.map(num => {return {item: phones[num]}});
 }
 
 // localhost:3000/products/laptops
@@ -204,10 +208,10 @@ router.get('/laptops', function (req, res, next) {
   res.json(laptops);
 });
 
-// localhost:3000/products/desktops
-router.get('/desktops', function (req, res, next) {
-  const desktops = getDesktops(req.query);
-  res.json(desktops);
+// localhost:3000/products/tablets
+router.get('/tablets', function (req, res, next) {
+  const tablets = getTablets(req.query);
+  res.json(tablets);
 });
 
 // localhost:3000/products/phones

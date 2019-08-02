@@ -178,7 +178,7 @@ function showResults() {
   document.getElementById('question-page').style.display = 'none';
   let url;
   if (fetchDataChoice == 'laptop') {
-    url = new URL('http://localhost:3000/products/laptops');
+    url = new URL(`${window.location.protocol}//${window.location.hostname}:${window.location.port}/products/laptops`);
     url.search = new URLSearchParams(userAnswers);
     fetch(url, {
         method: 'GET'
@@ -191,7 +191,7 @@ function showResults() {
         updateLaptopRecommendations(json);
       });
   } else if (fetchDataChoice == 'tablet') {
-    url = new URL('http://localhost:3000/products/tablets');
+    url = new URL(`${window.location.protocol}//${window.location.hostname}:${window.location.port}/products/tablets`);
     url.search = new URLSearchParams(userAnswers);
     fetch(url, {
         method: 'GET'
@@ -204,7 +204,7 @@ function showResults() {
         updateTabletRecommendations(json);
       });
   } else if (fetchDataChoice == 'phone') {
-    url = new URL('http://localhost:3000/products/phones');
+    url = new URL(`${window.location.protocol}//${window.location.hostname}:${window.location.port}/products/phones/`);
     url.search = new URLSearchParams(userAnswers);
     fetch(url, {
         method: 'GET'
