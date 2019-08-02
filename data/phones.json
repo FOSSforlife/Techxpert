@@ -1,7 +1,7 @@
 [{
     "Name": "Samsung Galaxy S10 Plus",
     "Weight": "175g",
-    "Price": "$1696",
+    "Price": 1696,
     "Dimensions": "74.1 x 157.6 x 7.8mm",
     "OS": "Android 9.0 (Pie)",
     "Screen size": "6.4-inches",
@@ -16,7 +16,7 @@
   {
     "Name": "Huawei P30 Pro",
     "Weight": "192g",
-    "Price": "$839",
+    "Price": 839,
     "Dimensions": "158 x 73.4 x8.4mm",
     "OS": "Android 9.0 Pie",
     "Screen size": "6.47 inches",
@@ -31,7 +31,7 @@
   {
     "Name": "Huawei Mate 20 Pro",
     "Weight": "189g",
-    "Price": "$549",
+    "Price": 549,
     "Dimensions": "157.8 x 72.3 x 8.6mm",
     "OS": "Android 9.0 Pie, EMUI9.0",
     "Screen size": "6.39 inches",
@@ -46,7 +46,7 @@
   {
     "Name": "Samsung Galaxy Note 9",
     "Weight": "201g",
-    "Price": "$539",
+    "Price": 539,
     "Dimensions": "161.9 x 76.4 x8.8mm",
     "OS": "Android 8.1",
     "Screen size": "6.4 inches",
@@ -61,7 +61,7 @@
   {
     "Name": "Google Pixel 3 XL",
     "Weight": "184g",
-    "Price":"$599",
+    "Price": 599,
     "Dimensions": "158 x 76.7 x7.9mm",
     "OS": "Android 9.0",
     "Screen size": "6.3 inches",
@@ -76,7 +76,7 @@
   {
     "Name": "OnePlus 6T",
     "Weight": "185g",
-    "Price": "$399",
+    "Price": 399,
     "Dimensions": "157.5 x 74.8 x8.2mm",
     "OS": "Android 9.0",
     "Screen size": "6.41 inches",
@@ -91,7 +91,7 @@
   {
     "Name": "Xiaomi Mi 9",
     "Weight": "173g",
-    "Price": "$359",
+    "Price": 359,
     "Dimensions": "157.5 x 74.7 x 7.6mm",
     "OS": "Android 9.0",
     "Screen size": "6.39 inches",
@@ -106,7 +106,7 @@
   {
     "Name": "Nokia 9 PureView",
     "Weight": "172g",
-    "Price": "$499",
+    "Price": 499,
     "Dimensions": "155 x 75 x8mm",
     "OS": "Android 9.0 Pie",
     "Screen size": "5.99 inches",
@@ -121,7 +121,7 @@
   {
     "Name": "Sony Xperia 10 Plus",
     "Weight": "180g",
-    "Price": "$334",
+    "Price": 334,
     "Dimensions": "167 x 73 x8.3mm",
     "OS": "Android 9.0 Pie",
     "Screen size": "6.5 inches",
@@ -136,7 +136,7 @@
   {
     "Name": "HTC U12+",
     "Weight": "188g",
-    "Price": "$515",
+    "Price": 515,
     "Dimensions": "156.6 x 73.9 x8.7mm",
     "OS": "Android 8.0",
     "Screen size": "6.0 inches",
@@ -151,7 +151,7 @@
   {
     "Name": "Google Pixel 3A",
     "Weight": "147g",
-    "Price": "$369",
+    "Price": 369,
     "Dimensions": "151.3 x 70.1 x8.2mm",
     "OS": "Android 9.0",
     "Screen size": "5.6 inches",
@@ -166,7 +166,7 @@
   {
     "Name": "Iphone XS Max",
     "Weight": "208g",
-    "Price": "$1449",
+    "Price": 1449,
     "Dimensions": "157.5 x 77.4 x7.7mm",
     "OS": "iOS 12",
     "Screen size": "6.5 inches",
