@@ -72,7 +72,7 @@ const tabletQuestions = [{
   {
     title: 'How much do you value portability and battery life?',
     answers: [
-      'Very much - will be traveling with laptop/moving it around a lot',
+      'Very much - will be traveling with tablet/moving it around a lot',
       'Somewhat', 'Not at all'
     ],
     id: 'portability',
@@ -105,7 +105,7 @@ const phoneQuestions = [{
   {
     title: 'How much do you value portability and battery life?',
     answers: [
-      'Very much - will be traveling with laptop/moving it around a lot',
+      'Very much - will be traveling with phone a lot',
       'Somewhat', 'Not at all'
     ],
     id: 'portability',
