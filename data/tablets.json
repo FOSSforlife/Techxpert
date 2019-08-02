@@ -2,7 +2,7 @@
   {
   "Name": "Apple iPad Pro 12.9 (2018)",
   "Weight": "631g",
-  "Price": "$943",
+  "Price": 943,
   "Dimensions": "280.6 x 214.9 x 5.9mm",
   "OS": "iOS 12.1",
   "Screen size": "12.9",
@@ -17,7 +17,7 @@
   {
   "Name": "Apple iPad Air 2019",
   "Weight": "456g",
-  "Price": "$469",
+  "Price": 469,
   "Dimensions": "250.6 x 174.1 x6.1mm",
   "OS": "iOS 12",
   "Screen size": "10.5",
@@ -31,7 +31,7 @@
   },
   {
   "Name": "Samsung Galaxy Tab S4",
-  "Price": "$279",
+  "Price": 279,
   "Weight": "482g",
   "Dimensions": "249.3 x 164.3 x 7.1mm",
   "OS": "Android 8.1 Oreo",
@@ -47,7 +47,7 @@
   {
   "Name": "Apple iPad mini (2019)",
   "Weight": "300g",
-  "Price": "$384",
+  "Price": 384,
   "Dimensions": "203.2 x 134.8 x 6.1mm",
   "OS": "iOS 12",
   "Screen size": "7.8 inches",
@@ -62,7 +62,7 @@
   {
   "Name": "Apple iPad 9.7 (2018)",
   "Weight": "469g",
-  "Price": "$249",
+  "Price": 249,
   "Dimensions": "240x169.5x7.5mm",
   "OS": "iOS 11",
   "Screen size": "9.7",
@@ -77,7 +77,7 @@
   {
   "Name": "Microsoft Surface Go",
   "Weight": "1.15 pounds",
-  "Price": "$372",
+  "Price": 372,
   "Dimensions": "245 x 175 x8.3mm",
   "OS": "Windows 10",
   "Screen size": "10-inch",
@@ -92,7 +92,7 @@
   {
   "Name": "Samsung Galaxy Tab S5e",
   "Weight": "400g",
-  "Price": "$397",
+  "Price": 397,
   "Dimensions": "245 x 160 x5.5mm",
   "OS": "Android 9.0 Pie",
   "Screen size": "10.5-inches",
@@ -106,7 +106,7 @@
   },
   {
   "Name": "Microsoft Surface Pro 6 (2018)",
-  "Price": "$699",
+  "Price": 699,
   "Weight": "770g",
   "Dimensions": "292 x 201 x8.5mm",
   "OS": "Windows 10 Home",
@@ -121,7 +121,7 @@
   },
   {
   "Name": "Google Pixel Slate",
-  "Price": "$678",
+  "Price": 678,
   "Weight": "731g",
   "Dimensions": "291 x 202 x7mm",
   "OS": "Chrome OS",
@@ -137,7 +137,7 @@
   {
   "Name": "iPad Pro 11 (2018)",
   "Weight": "468g",
-  "Price": "$749",
+  "Price": 749,
   "Dimensions": "247.6 x 178.5 x 5.9mm",
   "OS": "iOS 12",
   "Screen size": "11-inch",
@@ -152,7 +152,7 @@
   {
   "Name": "Apple iPad Pro 10.5",
   "Weight": "469g",
-  "Price": "$472",
+  "Price": 472,
   "Dimensions": "250.6 x 174.1 x 6.1mm",
   "OS": "iOS 11",
   "Screen size": "10.5-inch",

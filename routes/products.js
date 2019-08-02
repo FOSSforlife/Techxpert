@@ -187,19 +187,30 @@ else if(query.primaryUse == 'web')
 
 
 function getTablets(query) {
+  list = []
   let tablets = fs.readFileSync('data/tablets.json')
   tablets = JSON.parse(tablets);
-
-  let randomNumbers = new Array(3).fill(0).map(() => Math.floor(Math.random()*11))
-  return randomNumbers.map(num => {return {item: tablets[num]}});
-  // return [tablets[0], tablets[1], tablets[2]].map(obj => {return {item: obj}});
+  budget = query["budget"]
+  tablets.forEach(function(item) {
+    if (budget > item["Price"] && budget <= item["Price"]+100){
+      list.push({"item" : item})
+    }
+  });
+  return (list.slice(0,4));
 }
 
 function getPhones(query) {
+  list = []
   let phones = fs.readFileSync('data/phones.json')
   phones = JSON.parse(phones);
-  let randomNumbers = new Array(3).fill(0).map(() => Math.floor(Math.random()*11))
-  return randomNumbers.map(num => {return {item: phones[num]}});
+  budget = query["budget"]
+  phones.forEach(function(item) {
+    if (budget > item["Price"] && budget <= item["Price"]+100){
+      list.push({"item" : item})
+    }
+  });
+  console.log(list.slice(0,4))
+  return (list.slice(0,4));
 }
 
 // localhost:3000/products/laptops
